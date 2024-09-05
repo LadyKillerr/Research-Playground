@@ -1,0 +1,314 @@
+
+405006.png
+size: 219,520
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+AWaLong_Arm_L
+  rotate: false
+  xy: 133, 92
+  size: 36, 39
+  orig: 36, 39
+  offset: 0, 0
+  index: -1
+AWaLong_Arm_R
+  rotate: true
+  xy: 86, 95
+  size: 38, 45
+  orig: 38, 45
+  offset: 0, 0
+  index: -1
+AWaLong_Belt
+  rotate: false
+  xy: 156, 293
+  size: 61, 30
+  orig: 61, 30
+  offset: 0, 0
+  index: -1
+AWaLong_Body
+  rotate: false
+  xy: 78, 135
+  size: 53, 60
+  orig: 53, 60
+  offset: 0, 0
+  index: -1
+AWaLong_Book
+  rotate: true
+  xy: 2, 103
+  size: 100, 38
+  orig: 100, 38
+  offset: 0, 0
+  index: -1
+AWaLong_Book_LB
+  rotate: true
+  xy: 171, 2
+  size: 16, 10
+  orig: 16, 10
+  offset: 0, 0
+  index: -1
+AWaLong_Book_LT
+  rotate: false
+  xy: 34, 10
+  size: 17, 12
+  orig: 17, 12
+  offset: 0, 0
+  index: -1
+AWaLong_Book_Leaf
+  rotate: true
+  xy: 42, 129
+  size: 74, 34
+  orig: 74, 34
+  offset: 0, 0
+  index: -1
+AWaLong_Book_Leaf_A1
+  rotate: false
+  xy: 162, 149
+  size: 42, 49
+  orig: 42, 49
+  offset: 0, 0
+  index: -1
+AWaLong_Book_Leaf_B
+  rotate: false
+  xy: 184, 356
+  size: 33, 40
+  orig: 33, 40
+  offset: 0, 0
+  index: -1
+AWaLong_Book_RB
+  rotate: false
+  xy: 144, 295
+  size: 10, 8
+  orig: 10, 8
+  offset: 0, 0
+  index: -1
+AWaLong_Book_RT
+  rotate: true
+  xy: 199, 49
+  size: 10, 12
+  orig: 10, 12
+  offset: 0, 0
+  index: -1
+AWaLong_Calf_L
+  rotate: true
+  xy: 144, 200
+  size: 42, 67
+  orig: 42, 67
+  offset: 0, 0
+  index: -1
+AWaLong_Calf_LB
+  rotate: false
+  xy: 171, 20
+  size: 17, 27
+  orig: 17, 27
+  offset: 0, 0
+  index: -1
+AWaLong_Calf_R
+  rotate: false
+  xy: 84, 42
+  size: 42, 51
+  orig: 42, 51
+  offset: 0, 0
+  index: -1
+AWaLong_Calf_RB
+  rotate: false
+  xy: 199, 61
+  size: 18, 23
+  orig: 18, 23
+  offset: 0, 0
+  index: -1
+AWaLong_Cloak_BB
+  rotate: true
+  xy: 2, 24
+  size: 77, 49
+  orig: 77, 49
+  offset: 0, 0
+  index: -1
+AWaLong_Cloak_BT
+  rotate: true
+  xy: 79, 197
+  size: 73, 63
+  orig: 73, 63
+  offset: 0, 0
+  index: -1
+AWaLong_Cloak_LF
+  rotate: false
+  xy: 156, 325
+  size: 26, 69
+  orig: 26, 69
+  offset: 0, 0
+  index: -1
+AWaLong_Eyelid_L
+  rotate: false
+  xy: 78, 129
+  size: 6, 4
+  orig: 6, 4
+  offset: 0, 0
+  index: -1
+AWaLong_Eyelid_R
+  rotate: false
+  xy: 126, 272
+  size: 3, 2
+  orig: 3, 2
+  offset: 0, 0
+  index: -1
+AWaLong_Foot_L
+  rotate: true
+  xy: 171, 86
+  size: 23, 32
+  orig: 23, 32
+  offset: 0, 0
+  index: -1
+AWaLong_Foot_R
+  rotate: true
+  xy: 2, 5
+  size: 17, 30
+  orig: 17, 30
+  offset: 0, 0
+  index: -1
+AWaLong_Forearm_L
+  rotate: false
+  xy: 128, 43
+  size: 40, 47
+  orig: 40, 47
+  offset: 0, 0
+  index: -1
+AWaLong_Forearm_R
+  rotate: true
+  xy: 171, 111
+  size: 36, 32
+  orig: 36, 32
+  offset: 0, 0
+  index: -1
+AWaLong_Hair_B
+  rotate: true
+  xy: 184, 327
+  size: 27, 30
+  orig: 27, 30
+  offset: 0, 0
+  index: -1
+AWaLong_Hair_F
+  rotate: false
+  xy: 162, 133
+  size: 7, 14
+  orig: 7, 14
+  offset: 0, 0
+  index: -1
+AWaLong_Hand_L
+  rotate: false
+  xy: 141, 13
+  size: 28, 28
+  orig: 28, 28
+  offset: 0, 0
+  index: -1
+AWaLong_Hand_LB
+  rotate: false
+  xy: 210, 283
+  size: 5, 8
+  orig: 5, 8
+  offset: 0, 0
+  index: -1
+AWaLong_Hand_R
+  rotate: false
+  xy: 53, 9
+  size: 30, 26
+  orig: 30, 26
+  offset: 0, 0
+  index: -1
+AWaLong_Hand_RB
+  rotate: false
+  xy: 85, 10
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+AWaLong_Head
+  rotate: false
+  xy: 117, 10
+  size: 22, 30
+  orig: 22, 30
+  offset: 0, 0
+  index: -1
+AWaLong_Pelivs
+  rotate: true
+  xy: 170, 49
+  size: 35, 27
+  orig: 35, 27
+  offset: 0, 0
+  index: -1
+AWaLong_Scapula_L
+  rotate: false
+  xy: 159, 398
+  size: 56, 32
+  orig: 56, 32
+  offset: 0, 0
+  index: -1
+AWaLong_Scapula_LB
+  rotate: true
+  xy: 126, 276
+  size: 27, 16
+  orig: 27, 16
+  offset: 0, 0
+  index: -1
+AWaLong_Skirt_B
+  rotate: false
+  xy: 2, 396
+  size: 155, 122
+  orig: 155, 122
+  offset: 0, 0
+  index: -1
+AWaLong_Skirt_F
+  rotate: false
+  xy: 159, 432
+  size: 58, 86
+  orig: 58, 86
+  offset: 0, 0
+  index: -1
+AWaLong_Skirt_Ff
+  rotate: false
+  xy: 42, 103
+  size: 42, 24
+  orig: 42, 24
+  offset: 0, 0
+  index: -1
+AWaLong_Skirt_L
+  rotate: false
+  xy: 2, 272
+  size: 122, 122
+  orig: 122, 122
+  offset: 0, 0
+  index: -1
+AWaLong_Skirt_LB
+  rotate: false
+  xy: 2, 205
+  size: 75, 65
+  orig: 75, 65
+  offset: 0, 0
+  index: -1
+AWaLong_Skirt_Lf
+  rotate: false
+  xy: 144, 244
+  size: 64, 47
+  orig: 64, 47
+  offset: 0, 0
+  index: -1
+AWaLong_Skirt_R
+  rotate: false
+  xy: 126, 305
+  size: 28, 89
+  orig: 28, 89
+  offset: 0, 0
+  index: -1
+AWaLong_Thigh_L
+  rotate: false
+  xy: 53, 37
+  size: 29, 64
+  orig: 29, 64
+  offset: 0, 0
+  index: -1
+AWaLong_Thigh_R
+  rotate: false
+  xy: 133, 133
+  size: 27, 62
+  orig: 27, 62
+  offset: 0, 0
+  index: -1
