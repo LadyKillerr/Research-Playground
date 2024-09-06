@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0))
         {
             playerController.SetAnimState(_ATTACK);
-            playerController.SetAnimation()
+            //playerController.SetAnimation();
         
         }
 

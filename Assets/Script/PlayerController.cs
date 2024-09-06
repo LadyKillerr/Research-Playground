@@ -10,20 +10,20 @@ public class PlayerController : MonoBehaviour
 
     private const string _IDLE = "Idle";
     private const string _WALKING = "Run";
-    private const string _RUNNING = "Run";
     private const string _JUMPING = "Jump";
+    private const string _JUMPING2 = "Jump2";
 
     [Header("Animation Controller")]
     [SerializeField] SkeletonAnimation skeletonAnimation;
-    [SerializeField] AnimationReferenceAsset idle, walking, running, jumping, attacking;
+    [SerializeField] AnimationReferenceAsset idle, walking, jumping, jumping2, attacking;
     [SerializeField] string currentAnimState;
 
     [Header("Player Input Config")]
+    [SerializeField] bool isGrounded;
     [SerializeField] bool isIdling;
 
     Vector2 inputVector;
     [SerializeField] bool isWalking;
-    [SerializeField] bool isRunning;
     [SerializeField] bool isJumping;
 
 
@@ -33,9 +33,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] float jumpForce = 50f;
     [SerializeField] float jumpDelay = 0.33f;
-    //[SerializeField] int jumpCount = 2;
-
-    [SerializeField] bool isGrounded;
+    [SerializeField] int jumpCount = 2;
+    [SerializeField] int currentJumpCount;
 
     Rigidbody2D playerRigidbody;
     CapsuleCollider2D capsuleCollider2D;
@@ -84,14 +83,14 @@ public class PlayerController : MonoBehaviour
     {
         inputVector = value.Get<Vector2>();
 
-        if (inputVector != Vector2.zero)
-        {
-            isWalking = true;
-        }
-        else
-        {
-            isWalking = false;
-        }
+        //if (inputVector != Vector2.zero)
+        //{
+        //    isWalking = true;
+        //}
+        //else
+        //{
+        //    isWalking = false;
+        //}
     }
 
     //private void OnSprint(InputValue value)
@@ -110,50 +109,49 @@ public class PlayerController : MonoBehaviour
 
     private void OnJump(InputValue value)
     {
-        if (value.isPressed && isGrounded)
+        if (value.isPressed && currentJumpCount > Mathf.Epsilon)
         {
             isJumping = true;
 
-            if (currentAnimState != _JUMPING)
+
+            if (currentJumpCount == 2)
             {
-                currentAnimState = _JUMPING;
-                SetCharacterState(currentAnimState);
-                Debug.Log("Is Played Jumping Animation");
+                SetAnimState(_JUMPING);
+            }
+            else if (currentJumpCount == 1)
+            {
+                SetAnimState(_JUMPING2);
             }
 
-            playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, jumpForce);
+            playerRigidbody.AddForce(new Vector2(playerRigidbody.velocity.x, jumpForce));
+
+            currentJumpCount--;
+
+
         }
 
-
     }
+
+
 
     void CharacterMovement()
     {
         playerRigidbody.velocity = new Vector2(inputVector.x * walkSpeed * Time.deltaTime, playerRigidbody.velocity.y);
 
-        if (playerRigidbody.velocity.x != 0 && isGrounded && isWalking)
+        if (playerRigidbody.velocity.x != 0 && isGrounded)
+        {
+            isWalking = true;
+        }
+        else { isWalking = false; }
+
+        if (isGrounded && isWalking)
         {
             if (currentAnimState != _WALKING)
             {
-                // switch this to _WALKING if there is an walking animation avaiable 
                 SetAnimState(_WALKING);
-                isWalking = true;
             }
         }
-        else if (playerRigidbody.velocity.x != 0 && !isGrounded && isJumping)
-        {
-            if (currentAnimState != _JUMPING)
-            {
-                currentAnimState = _JUMPING;
-                SetCharacterState(currentAnimState);
-                isJumping = true;
-            }
-        }
-        else if (playerRigidbody.velocity.x == 0)
-        {
-            isRunning = false;
-            isWalking = false;
-        }
+
     }
 
     void FlipSprite()
@@ -173,6 +171,7 @@ public class PlayerController : MonoBehaviour
     {
         if (capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
+            currentJumpCount = jumpCount;
             isGrounded = true;
             isJumping = false;
         }
@@ -186,7 +185,8 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleIdleState()
     {
-        if (capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")) && !isWalking && !isRunning && !isJumping)
+        if (capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")) && !isWalking && !isJumping
+             && isGrounded)
         {
             if (!isIdling)
             {
@@ -219,14 +219,13 @@ public class PlayerController : MonoBehaviour
         {
             SetAnimation(walking, true, 1);
         }
-        else if (state.Equals(_RUNNING))
-        {
-            SetAnimation(running, true, 1);
-        }
         else if (state.Equals(_JUMPING))
         {
-            StartCoroutine(ToggleDelayTime(jumpDelay));
             SetAnimation(jumping, false, 1);
+        }
+        else if (state.Equals(_JUMPING2))
+        {
+            SetAnimation(jumping2, false, 1);
         }
 
     }
@@ -234,7 +233,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator ToggleDelayTime(float delay)
     {
         yield return new WaitForSeconds(delay);
-        Debug.Log("Have waited before jumping");
+
     }
 
     public void SetAnimState(string state)
