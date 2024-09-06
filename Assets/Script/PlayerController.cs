@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     private const string _WALKING = "Run";
     private const string _RUNNING = "Run";
     private const string _JUMPING = "Jump";
-    private const string _ATTACKING = "Shoot";
 
     [Header("Animation Controller")]
     [SerializeField] SkeletonAnimation skeletonAnimation;
@@ -26,7 +25,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] bool isWalking;
     [SerializeField] bool isRunning;
     [SerializeField] bool isJumping;
-    [SerializeField] bool isFiring;
 
 
     [SerializeField] float walkSpeed = 100f;
@@ -36,8 +34,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce = 50f;
     [SerializeField] float jumpDelay = 0.33f;
     //[SerializeField] int jumpCount = 2;
-
-    [SerializeField] float firingAnimTime = 0.6333f;
 
     [SerializeField] bool isGrounded;
 
@@ -140,8 +136,7 @@ public class PlayerController : MonoBehaviour
             if (currentAnimState != _WALKING)
             {
                 // switch this to _WALKING if there is an walking animation avaiable 
-                currentAnimState = _WALKING;
-                SetCharacterState(currentAnimState);
+                SetAnimState(_WALKING);
                 isWalking = true;
             }
         }
@@ -185,21 +180,17 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = false;
             isJumping = true;
-
-            //currentAnimState = _JUMPING;
-            //SetAnimState(currentAnimState);
         }
 
     }
 
     private void ToggleIdleState()
     {
-        if (capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")) && !isWalking && !isRunning && !isJumping && !isFiring)
+        if (capsuleCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")) && !isWalking && !isRunning && !isJumping)
         {
             if (!isIdling)
             {
-                currentAnimState = _IDLE;
-                SetCharacterState(currentAnimState);
+                SetAnimState(_IDLE);
                 isIdling = true;
             }
         }
@@ -236,10 +227,6 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(ToggleDelayTime(jumpDelay));
             SetAnimation(jumping, false, 1);
-        }
-        else if (state.Equals(_ATTACKING))
-        {
-            SetAnimation(attacking, false, 1);
         }
 
     }
