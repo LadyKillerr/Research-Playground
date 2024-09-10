@@ -20,17 +20,15 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetKey(KeyCode.J))
+        {
+            Attack();
+        }
     }
 
     public void Attack()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
             playerController.SetAnimState(_ATTACK);
             //playerController.SetAnimation();
-        
-        }
-
     }
 }
